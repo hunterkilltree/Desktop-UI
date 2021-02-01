@@ -38,10 +38,35 @@ from tkinter import *
 
 # root widget
 root = Tk()
+root.title("ControlUI")
+root.iconbitmap("images/Robot2.ico")
+e = Entry(root, width=50, borderwidth=5) # input field
 
-myLabel = Label(root, text="Hello world!")
+# e.insert
+# e.delete
+# my_img = ImageTk.PhotoImage(Image.open("images/Robot2.png")) ## UI label
+# my_label = Label(image=my_img)
+# my_label.pack()
 
-myLabel.pack()
+def printHello():
+    print("Hello on terminal {}".format(e.get())) # .get get the value in the input field
+
+
+myLabel1 = Label(root, text="Hello world!")
+myLabel2 = Label(root, text="Hello VietNam!")
+myButton1 = Button(root, text="Click here", command=printHello)
+
+
+
+# myLabel1.grid(row=0, column=0) # grid or pack
+# myLabel2.grid(row=1, column=0)
+# myButton1.grid(row=2, column=0)
+# e.grid(row=3, column=0)
+
+
+
+button_quit = Button(root, text="Exit", command=root.quit)
+button_quit.pack()
 
 root.mainloop()
 
