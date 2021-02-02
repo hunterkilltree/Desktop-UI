@@ -35,6 +35,8 @@ if robot > destination some robot will not move.
 
 ### Should random custome or fix postion of station and  where is the object pick up
 from tkinter import *
+from tkinter import messagebox
+
 
 # root widget
 root = Tk()
@@ -51,6 +53,12 @@ e = Entry(root, width=50, borderwidth=5) # input field
 def printHello():
     print("Hello on terminal {}".format(e.get())) # .get get the value in the input field
 
+def popup():
+    # messagebox.showinfo("this is popup", "hello world")
+    # messagebox.showerror("this is popup", "hello world")
+    # messagebox.askokcancel("this is question", "alo alo")
+    # messagebox.askyesno("this is question", "alo alo")
+    messagebox.askyesnocancel("this is question", "alo alo")
 
 frame = LabelFrame(root, text="This is frame", padx=50, pady=50)
 frame.pack(padx=10, pady=10)
@@ -58,6 +66,7 @@ frame.pack(padx=10, pady=10)
 myLabel1 = Label(root, text="Hello world!")
 myLabel2 = Label(root, text="Hello VietNam!")
 myButton1 = Button(root, text="Click here", command=printHello)
+myButton2 = Button(root, text="Open popup", command=popup)
 # myButton1 = Button(root, text="Click here", command= Lambda: printHello())
 
 
@@ -70,9 +79,13 @@ r = IntVar()
 Radiobutton(root, text="Option 1", variable=r, value="1").pack()
 Radiobutton(root, text="Option 1", variable=r, value="2").pack()
 
-
+var = IntVar()
+c = Checkbutton(root, text="Check this", variable=var, onvalue="On", offvalue="Off")
+c.deselect() # not select by default
+c.pack()
 
 button_quit = Button(frame, text="Exit", command=root.quit)
+myButton2.pack()
 button_quit.pack()
 root.mainloop()
 
