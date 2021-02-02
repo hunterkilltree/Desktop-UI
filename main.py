@@ -52,10 +52,13 @@ def printHello():
     print("Hello on terminal {}".format(e.get())) # .get get the value in the input field
 
 
+frame = LabelFrame(root, text="This is frame", padx=5, pady=5)
+frame.pack()
+
 myLabel1 = Label(root, text="Hello world!")
 myLabel2 = Label(root, text="Hello VietNam!")
 myButton1 = Button(root, text="Click here", command=printHello)
-
+# myButton1 = Button(root, text="Click here", command= Lambda: printHello())
 
 
 # myLabel1.grid(row=0, column=0) # grid or pack
@@ -65,7 +68,7 @@ myButton1 = Button(root, text="Click here", command=printHello)
 
 
 
-button_quit = Button(root, text="Exit", command=root.quit)
+button_quit = Button(frame, text="Exit", command=root.quit)
 button_quit.pack()
 
 root.mainloop()
