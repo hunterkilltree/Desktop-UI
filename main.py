@@ -52,8 +52,8 @@ def printHello():
     print("Hello on terminal {}".format(e.get())) # .get get the value in the input field
 
 
-frame = LabelFrame(root, text="This is frame", padx=5, pady=5)
-frame.pack()
+frame = LabelFrame(root, text="This is frame", padx=50, pady=50)
+frame.pack(padx=10, pady=10)
 
 myLabel1 = Label(root, text="Hello world!")
 myLabel2 = Label(root, text="Hello VietNam!")
@@ -66,11 +66,14 @@ myButton1 = Button(root, text="Click here", command=printHello)
 # myButton1.grid(row=2, column=0)
 # e.grid(row=3, column=0)
 
+r = IntVar()
+Radiobutton(root, text="Option 1", variable=r, value="1").pack()
+Radiobutton(root, text="Option 1", variable=r, value="2").pack()
+
 
 
 button_quit = Button(frame, text="Exit", command=root.quit)
 button_quit.pack()
-
 root.mainloop()
 
 
